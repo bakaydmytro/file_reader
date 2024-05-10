@@ -1,5 +1,5 @@
-runtime: python39
-
+runtime: python312
 instance_class: F4
-entrypoint: streamlit run main.py
 service: file-reader
+
+entrypoint: streamlit run main.py --server.enableCORS false --browser.serverAddress 0.0.0.0 --browser.gatherUsageStats false 
