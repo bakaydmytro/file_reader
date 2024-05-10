@@ -1,6 +1,6 @@
 runtime: python39
 
-instance_class: B1
+instance_class: F1
 entrypoint: streamlit run main.py
 service: file-reader
 basic_scaling:
