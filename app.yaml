@@ -1,5 +1,5 @@
 runtime: python39
 
-instance_class: F1
+instance_class: F4
 entrypoint: streamlit run main.py
 service: file-reader
