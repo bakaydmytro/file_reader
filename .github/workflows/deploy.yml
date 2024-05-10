@@ -2,8 +2,11 @@ name: Deployment
 
 on:
   push:
-    branches:
-    - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
   
 jobs:
   deploy:
@@ -19,3 +22,4 @@ jobs:
           version: main
           credentials: ${{secrets.GOOGLE_APP_ENGINE_KEY}}
           flags: --no-cache
+          deliverables: app.yaml
