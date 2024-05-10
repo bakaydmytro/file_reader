@@ -1,5 +1,9 @@
-runtime: python312
-instance_class: F4
+runtime: python
 service: file-reader
-
-entrypoint: streamlit run main.py --server.enableCORS false --browser.serverAddress 0.0.0.0 --browser.gatherUsageStats false 
+runtime_config:
+operating_system: “ubuntu18”
+runtime_version: “3.8”
+entrypoint: streamlit run --server.port=8080 --server.address=0.0.0.0 --server.enableCORS=false --server.enableWebsocketCompression=false --server.enableXsrfProtection=false --server.headless=true app.py
+env: flex
+network:
+session_affinity: true
