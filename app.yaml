@@ -1,6 +1,7 @@
 runtime: python39
 
 instance_class: B1
+entrypoint: streamlit run main.py
 service: file-reader
 basic_scaling:
   max_instances: 1
