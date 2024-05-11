@@ -37,11 +37,16 @@ def setup_store(embedding):
 
 def process_uploaded_file(uploaded_file):
     if uploaded_file:
-        temp_file_path = f"./upload/{uploaded_file.name}"
+        upload_dir = './upload/'
+        os.makedirs(upload_dir, exist_ok=True)
+        temp_file_path = os.path.join(upload_dir, uploaded_file.name)
+        print("File path:", temp_file_path)
         with open(temp_file_path, "wb") as file:
             file.write(uploaded_file.getvalue())
         return temp_file_path
-    return None
+    else:
+        print("No file uploaded.") 
+        return None
 
 def split_documents(file_path):
     loader = PyPDFLoader(file_path)
