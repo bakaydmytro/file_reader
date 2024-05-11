@@ -1,4 +1,10 @@
-runtime: python39
-service: file-reader
-entrypoint: streamlit run --server.port=8080 --server.address=0.0.0.0 --server.enableCORS=false --server.enableWebsocketCompression=false --server.enableXsrfProtection=false --server.headless=true main.py
+runtime: python
 env: flex
+
+runtime_config:
+  python_version: 3
+
+entrypoint: streamlit run main.py --server.port $PORT
+
+automatic_scaling:
+  max_num_instances: 1
