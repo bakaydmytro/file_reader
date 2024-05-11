@@ -20,5 +20,4 @@ jobs:
           project_id: ${{secrets.PROJECT_ID}}
           version: main
           credentials: ${{secrets.GOOGLE_APP_ENGINE_KEY}}
-          flags: --no-cache
           deliverables: app.yaml
